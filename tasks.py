@@ -113,7 +113,7 @@ class OrderRobots:
 
     def main_task(self):
         attempts = 0
-        max_attempts = 1
+        max_attempts = 3
         while attempts < max_attempts:
             try:
                 self.open_robot_order_website(
@@ -127,7 +127,7 @@ class OrderRobots:
                 break
             except Exception as error:
                 attempts += 1
-                logging.error(f"Attempt {attempts} failed with error: {error_attempt}")
+                logging.error(f"Attempt {attempts} failed with error: {error}")
             finally:
                 self.browser.close_all_browsers()
 
